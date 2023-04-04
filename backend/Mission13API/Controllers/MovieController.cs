@@ -10,7 +10,7 @@ namespace Mission13API.Controllers
     {
         private MovieDBContext context;
 
-        MovieController(MovieDBContext temp)
+        public MovieController(MovieDBContext temp)
         {
             context = temp;
         }
@@ -19,7 +19,7 @@ namespace Mission13API.Controllers
         public IEnumerable<Movie> Get()
         {
             return context.Movies
-                .Where(x => x.Edited == true)
+                .Where(x => x.Edited == "Yes")
                 .OrderBy(x => x.Title)
                 .ToArray();
         }
