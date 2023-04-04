@@ -6,7 +6,7 @@ function PodcastPage() {
       </div>
       <div className="row mt-4">
         <span>Listen to the podcast here!</span>
-        <a href="https://baconsale.com/" target="_blank">
+        <a href="https://baconsale.com/" target="_blank" rel="noreferrer">
           Click Here!
         </a>
       </div>
