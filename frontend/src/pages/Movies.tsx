@@ -6,7 +6,7 @@ function MoviePage() {
 
   useEffect(() => {
     const fetchFood = async () => {
-      const rsp = await fetch('https://localhost:7289/api/movie');
+      const rsp = await fetch('https://localhost:4000/api/movie');
       const temp = await rsp.json();
       setMovieData(temp);
     };
