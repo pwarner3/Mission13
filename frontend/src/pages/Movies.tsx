@@ -33,6 +33,8 @@ function MoviePage() {
                 <th>Rating</th>
                 <th>Category</th>
                 <th>Edited</th>
+                <th>Lent To</th>
+                <th>Notes</th>
               </tr>
             </thead>
             <tbody>
@@ -44,6 +46,8 @@ function MoviePage() {
                   <td>{m.rating}</td>
                   <td>{m.category}</td>
                   <td>{m.edited}</td>
+                  <td>{m.lentTo}</td>
+                  <td>{m.notes}</td>
                 </tr>
               ))}
             </tbody>
