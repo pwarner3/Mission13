@@ -7,9 +7,6 @@ namespace Mission13API.Data
 {
     public partial class MovieDBContext : DbContext
     {
-        public MovieDBContext()
-        {
-        }
 
         public MovieDBContext(DbContextOptions<MovieDBContext> options)
             : base(options)
