@@ -1,8 +1,18 @@
-import data from '../MovieData.json';
-
-const MDS = data.MovieData;
+import { useEffect, useState } from 'react';
+import { Movie } from '../types/movie';
 
 function MoviePage() {
+  const [movieData, setMovieData] = useState<Movie[]>([]);
+
+  useEffect(() => {
+    const fetchFood = async () => {
+      const rsp = await fetch('https://localhost:7289/api/movie');
+      const temp = await rsp.json();
+      setMovieData(temp);
+    };
+
+    fetchFood();
+  }, []);
   return (
     <div className="container-fluid">
       <div className="row mt-4">
@@ -26,14 +36,14 @@ function MoviePage() {
               </tr>
             </thead>
             <tbody>
-              {MDS.map((m) => (
-                <tr>
-                  <td>{m.Title}</td>
-                  <td>{m.Year}</td>
-                  <td>{m.Director}</td>
-                  <td>{m.Rating}</td>
-                  <td>{m.Category}</td>
-                  <td>{m.Edited}</td>
+              {movieData.map((m) => (
+                <tr key={m.movieId}>
+                  <td>{m.title}</td>
+                  <td>{m.year}</td>
+                  <td>{m.director}</td>
+                  <td>{m.rating}</td>
+                  <td>{m.category}</td>
+                  <td>{m.edited}</td>
                 </tr>
               ))}
             </tbody>
